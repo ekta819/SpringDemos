@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--<bean id="work1" class="com.learn.spring.Work" scope="prototype"></bean>-->
+   <!-- <bean id="lap" class="com.learn.spring.Laptop"></bean> -
+   both above lines will create Work & Laptop Obj using Line9 in Main.
+    <bean id="work2" class="com.learn.spring.Work"></bean>
+    work1 & work2 will create 2 Objs of same class.-->
+   <!-- <bean id="work1" class="com.learn.spring.Work" >
+        <property name="age" value="21"></property>
+        <property name="lap" ref="lap1"></property>
+    </bean>
+    <bean id="lap1" class="com.learn.spring.Laptop"></bean>-->
+    <!-- <bean id="work" class="com.learn.spring.Work" autowire="byType"> example of autowire byType>
+        <property name="age" value="21"/>
+      <property name="comp" ref="lap"/>
+    </bean>
+    <bean id="desk" class="com.learn.spring.Desktop" primary="true"></bean>
+    <bean id="lap" class="com.learn.spring.Laptop"></bean>-->
+
+    <bean id="work" class="com.learn.spring.Work" autowire="byType">  <!--example of Inner Bean-->
+        <property name="age" value="21"/>
+        <property name="comp" >
+            <bean id="lap" class="com.learn.spring.Laptop"></bean>
+        </property>
+    </bean>
+
+
+
+
+
+</beans>
